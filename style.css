@@ -271,7 +271,25 @@ section {
 
   .about-containers22 {
    gap: 2rem;
-   margin-left: 1rem;
+   margin-left: 2rem;
+   width: 600px;
+   height: 400px;
+  }
+
+  .about-containers25 {
+   
+    display: flex;
+    gap: 2rem; /* spacing between project cards */
+    margin-left: -8rem; /* optional: gives some breathing room */
+    margin-top: 3rem; 
+    width: 600px;
+   height: 400px;
+   }
+
+   .btn-container25 {
+    display: flex;
+    gap: 1rem;
+    margin-left: 1rem;
   }
 
   /* contact */
@@ -317,5 +335,6 @@ section {
     height: 2.5rem;
 
   }
+  
 
  
