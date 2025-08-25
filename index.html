@@ -1,213 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shriya's Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shriya Shrestha | Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px 60px;
+      font-size: 14px;
+    }
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px;
+    }
+    .hero-text h1 {
+      font-size: 60px;
+      font-weight: 800;
+      margin: 10px 0;
+    }
+    .hero-text p {
+      font-size: 16px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #444;
+    }
+    .hero img {
+      max-width: 600px;
+      height: auto;
+      margin-left: -50px;  /* move right */
+      margin-top: -30px;  /* move up */
+    }
+
+    /* Project Sections */
+    .projects {
+      margin: 100px auto;
+      padding: 0 40px;
+      max-width: 1100px;
+    }
+    .projects h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      text-align: center;
+      
+      
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+
+    .project-card img {
+      width: 100%;
+      max-width: 300px; /* keeps folder images consistent size */
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .project-card h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 15px 0 8px;
+    }
+    .project-card p {
+      font-size: 14px;
+      color: #444;
+      margin: 0;
+    }
+
+    #personal .project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;           /* default background */
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s ease;  /* smooth hover animation */
+}
+
+#personal .project-card:hover {
+  background: #f0f4ff;        /* light highlight background */
+  transform: scale(1.03);     /* slight zoom effect */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* shadow on hover */
+  color: #2a4d9b;             /* text color change */
+}
+
+
+    #experience .project-card:nth-child(1) p { color: #3498DB; } /* first card */
+    #experience .project-card:nth-child(2) p { color: #fb5400; } /* second card */
+    #experience .project-card:nth-child(3) p { color: #a34400; } /* third card */
+
+    #personal .project-card:nth-child(1) p { color: #E91E63; } /* pink */
+    #personal .project-card:nth-child(2) p { color: #9C27B0; } /* purple */
+    #personal .project-card:nth-child(3) p { color: #008c33; } /* orange */
+
+    #certifications {
+  text-align: center;
+  padding: 40px;
+}
+
+.cert-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cert-badge {
+  background: linear-gradient(135deg, #ffe6f0, #e0f7fa); /* pastel gradient */
+  border-radius: 50px;             /* pill/badge look */
+  padding: 20px 30px;
+  min-width: 220px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-badge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+}
+
+.cert-icon {
+  font-size: 30px;                 /* emoji size */
+  display: block;
+  margin-bottom: 8px;
+}
+
+.cert-badge h3 {
+  font-size: 18px;
+  color: #d63384;                  /* playful pink */
+  margin: 5px 0;
+}
+
+.cert-badge p {
+  font-size: 14px;
+  color: #555;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+  margin-right: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-right: 10px;
+  margin-top: 210px;
+  
+  border-radius: 30px;
+  background: #6c63ff;   /* primary purple */
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.butto {
+  margin-top: 20px;          /* space under your name */
+  display: flex;
+  justify-content: flex-start; 
+  margin-bottom: 0px;
+  margin-left: -810px;
+}
+
+.btn:hover {
+  background: #5548d9;   /* darker on hover */
+  transform: scale(1.05);
+}
+
+.btn-alt {
+  background: transparent;
+  border: 2px solid #6c63ff;
+  color: #6c63ff;
+}
+
+.btn-alt:hover {
+  background: #6c63ff;
+  color: white;
+}
+
+
+#contact {
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.contact-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.contact-card p {
+  font-weight: bold;
+  margin-bottom: 0px;
+  color: #222;
+}
+
+.contact-card small {
+  color: #555;
+  word-break: break-all;
+  font-size: 0.85rem;
+}
+
+
+  </style>
 </head>
-
 <body>
-    <nav id="desktop-nav">
-        <div class="logo">Shriya Shrestha</div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-              
-                <li><a href="#contact">Contact</a></li>
+  <!-- Navbar -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-text">
+    <p>Data Science | Data Analytics | Project Management</p>
+    <h1>SHRIYA<br>SHRESTHA</h1>
+  </div>
+
+  <div class="butto">
+    <div class="hero-buttons">
+      <a href="assets/Resume-Shriya-Shrestha-Junior.pdf" target="_blank" class="btn">Resume</a>
+      <a href="mailto: ss4637@scarletmail.rutgers.edu" class="btn btn-alt">Contact</a>
+    </div>
+  </div>
+
+  <img src="assets/shapes.png" alt="Abstract shapes">
+</section>
 
 
-            </ul>
-        </div>
-
-    </nav>
-    <section id="profile">
-        <div class="section__pic-container">
-            <img src="./assets/headshot.png" alt="Shriya Shrestha Profile Picture">
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title">Shriya Shrestha</h1>
-            <p class="section__text__p2">Computer Science and Data Science Student</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('assets/Resume-Shriya-Shrestha-Junior.pdf')">
-                    View Resume
-                </button>
-                <button class="btn btn-color-1" onclick="location.href = './#contact'">
-                    Contact Info
-                </button>
-            </div>
-            <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="my linkedin pfp" class="icon"
-                    onclick="location.href = 'https://www.linkedin.com/in/shriya-shrestha-55060a21a/'" />
-                <img src="./assets/github.png" alt="my github pfp" class="icon"
-                    onclick="location.href = 'https://github.com/shriyashrestha2'" />
-            </div>
-        </div>
-        </div>
+<section id="work">
+  <!-- Experience / Stakeholder Projects -->
+  <section class="projects" id="experience">
+    <br>
+    <br>
+    <h2>Experience</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="assets/blue.png" alt="Law Firm Project">
+        <h3>Technology Intern</h3>
         
-    </section>
+        <p> Law Office of Maria Noto
+        </p>
+      </div>
+      
+      <div class="project-card">
+        <img src="assets/orange.png" alt="Tableau Dashboard Project">
+        <h3>Data Science Project Developer</h3>
+        <p>Ignito</p>
+      </div>
+    </div>
+  </section>
+  
 
-    
-    <section id = "projects">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p class = "section__text__p1">Browse My Recent</p>
-        <h1 class = "title">Projects</h1>
-        <div class = "experience-details-container">
-            <div class = "about-containers22">
-            <div class = "details-container color-container">
-                <div class = "article-container">
-                    <img src = "assets/loading-circles-blue-gradient_78370-2646.avif"
-                    alt = "project1 png"
-                    class = "project-img"
-                    />
-                </div>
-                <h2 class = "experience-sub-title project-title"> [SQL PROJECT] In Progress</h2>
-                <div class = "btn-container22">
-                    <button class = "btn btn-color-2 project-btn" onclick = "location.href = 'https://github.com/shriyashrestha2/twitch-rec-system'">
-                        Github
-                    </button>
-                    <button class = "btn btn-color-2 project-btn" onclick = "location.href = 'https://www.youtube.com/watch?v=0h-2T-5KhYE'">
-                        Demo
-                    </button>
-                </div>
-            </div>
-            <div class = "details-container color-container">
-                <div class = "article-container">
-                    <img src = "assets/tab.png"
-                    alt = "project1 png"
-                    class = "project-img"
-                    />
-                </div>
-                <h2 class = "experience-sub-title project-title">Tableau Sales and Profit Dashboard</h2>
-                <div class = "btn-container22">
-                    <button class = "btn btn-color-2 project-btn" onclick = "location.href = ''">
-                        Kaggle
-                    </button>
-                    <button class = "btn btn-color-2 project-btn" onclick = "location.href = ''">
-                        Demo
-                    </button>
-                </div>
-            </div>
-            <div class = "details-container color-container">
-                <div class = "article-container">
-                    <img src = "assets/pngtree-wine-bottle-png-image_9174955.png"
-                    alt = "project1 png"
-                    class = "project-img"
-                    />
-                </div>
-                <h2 class = "experience-sub-title project-title">Wine Quality Model (ML Project)</h2>
-                <div class = "btn-container22">
-                    <button class = "btn btn-color-2 project-btn" onclick = "location.href = 'https://www.kaggle.com/code/shriyadata/wine-quality-prediction'">
-                        Kaggle
-                    </button>
-                    <button class = "btn btn-color-2 project-btn" onclick = "location.href = ''">
-                        Demo
-                    </button>
-                </div>
-            </div>
-        </div>
+  <!-- Personal Projects -->
+  <section class="projects" id="personal">
+    <h2>Personal Projects</h2>
+    <div class="project-grid">
+      <a href="https://github.com/yourusername/law-firm-data-analysis" target="_blank" class="project-card">
+        <img src="assets/pink.png" alt="Study Buddy App">
+        <h3>Law Firm Data Analysis Project</h3>
+        <p>Python | SQL | Tableau | Data Collection & Cleaning</p>
+      </a>
+  
+      <a href="https://github.com/shriyashrestha2/twitch-rec-system" target="_blank" class="project-card">
+        <img src="assets/tab.png" alt="Twitch Project">
+        <h3>Twitch Recommendation System</h3>
+        <p>Python | Data Cleaning | Machine Learning</p>
+      </a>
+  
+      <a href="https://github.com/shriyashrestha2/flight-price-eda" target="_blank" class="project-card">
+        <img src="assets/flight.png" alt="Flight Price EDA">
+        <h3>Flight Price Exploratory Data Analysis</h3>
+        <p>Python | Pandas | Matplotlib | Seaborn</p>
+      </a>
+    </div>
+  </section>  
+</section>
 
+  
+  <!-- Certifications 
+  <section class="projects" id="certifications">
+    <h2>Certifications</h2>
+    <div class="cert-grid">
+      <div class="cert-badge">
+        <span class="cert-icon">🎓</span>
+        <h3>Google Project Management</h3>
+        <p>Professional Certificate</p>
+      </div>
 
+    </div>
+  </section>
+  -->
+  <!-- Contact Me Section -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>I would love to connect! Reach me through any of the platforms below:</p>
+  
+  <div class="contact-cards">
+    <div class="contact-card" onclick="location.href='mailto:ss4637@scarletmail.rutgers.edu'">
+      <img src="./assets/email.png" alt="Email Icon" class="contact-icon">
+      <p>Email</p>
+    </div>
 
-<!-- 
-        <section id = "projects">
-            <div class = "experience-details-container">
-                <div class = "about-containers25">
-                <div class = "details-container color-container">
-                    <div class = "article-container">
-                        <img src = "./assets/twitch.png"
-                        alt = "project1 png"
-                        class = "project-img"
-                        />
-                    </div>
-                    <h2 class = "experience-sub-title project-title"> Reccomendation System</h2>
-                    <div class = "btn-container25">
-                        <button class = "btn btn-color-2 project-btn" onclick = "location.href = 'https://github.com/shriyashrestha2/twitch-rec-system'">
-                            Github
-                        </button>
-                        <button class = "btn btn-color-2 project-btn" onclick = "location.href = 'https://www.youtube.com/watch?v=0h-2T-5KhYE'">
-                            Demo
-                        </button>
-                    </div>
-                </div>
-                <div class = "details-container color-container">
-                    <div class = "article-container">
-                        <img src = "./assets/plaane.png"
-                        alt = "project1 png"
-                        class = "project-img"
-                        />
-                    </div>
-                    <h2 class = "experience-sub-title project-title">Flight Price Data Analysis</h2>
-                    <div class = "btn-container22">
-                        <button class = "btn btn-color-2 project-btn" onclick = "location.href = 'https://www.kaggle.com/code/shriyadata/flight-price-eda'">
-                            Kaggle
-                        </button>
-                        <button class = "btn btn-color-2 project-btn" onclick = "location.href = 'https://www.kaggle.com/code/shriyadata/flight-price-eda'">
-                            Demo
-                        </button>
-                    </div>
-                </div>
-                <div class = "details-container color-container">
-                    <div class = "article-container">
-                        <img src = "./assets/client.png"
-                        alt = "project1 png"
-                        class = "project-img"
-                        />
-                    </div>
-                    <h2 class = "experience-sub-title project-title">BP Client-Server Project</h2>
-                    <div class = "btn-container22">
-                        <button class = "btn btn-color-2 project-btn" onclick = "location.href = 'https://github.com/shriyashrestha2/blueprint-portal-project'">
-                            Github
-                        </button>
-                        <button class = "btn btn-color-2 project-btn" onclick = "location.href = 'https://github.com/shriyashrestha2'">
-                            Demo
-                        </button>
-                    </div>
-                </div>
-            </div>
+    <div class="contact-card" onclick="location.href='https://www.linkedin.com/in/shriya-shrestha-55060a21a/'">
+      <img src="./assets/linkedin.png" alt="LinkedIn Icon" class="contact-icon">
+      <p>LinkedIn</p>
+    </div>
 
---> 
- <!-- 
-          
-        </div>
-        <img src = "./assets/arrow.png" 
-        alt = "arrow icon"
-        class = "icon arrow"
-        onclick = "location.href = './#contact'"
-        />
-    --> 
-    </section>
-    <section id = "contact">
-        <p class = "section__text__p1">Get In Touch</p>
-        <h1 class = "title">Contact Me</h1>
-        <div class = "contact-info-upper-container">
-            <div class = "contact-info-container">
-                <img src = "./assets/email.png"
-                alt = "email icon"
-                class = "icon contact-icon email-icon" />
+    <div class="contact-card" onclick="location.href='https://github.com/shriyashrestha2'">
+      <img src="./assets/github.png" alt="GitHub Icon" class="contact-icon">
+      <p>GitHub</p>
+    </div>
+  </div>
+</section>
 
-                <p><a href = "mailto:shriya.shrestha@rutgers.edu">shriya.shrestha@rutgers.edu</a></p>
-            </div>
-            <div class = "contact-info-container">
-                <img src = "./assets/linkedin.png"
-                alt = "linkedin icon"
-                class = "icon contact-icon" />
-
-                <p><a href = "https://www.linkedin.com/in/shriya-shrestha-55060a21a/">LinkedIn</a></p>
-            </div>
-        </div>
-    </section>
-    <script src="script.js"> </script>
-
-</body>
-
+  
+  
 </html>
